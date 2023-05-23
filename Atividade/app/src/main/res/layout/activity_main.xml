@@ -10,7 +10,7 @@
         android:id="@+id/text_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aplicação Mobile"
+        android:text="@string/aplica_o_mobile"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -20,108 +20,113 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.036" />
 
     <EditText
         android:id="@+id/text_primeiro_nome"
-        android:layout_width="345dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="@string/string_text_hint_primeiro_nome"
         android:inputType="textPersonName"
         android:textColorHint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_titulo"
-        app:layout_constraintVertical_bias="0.0" />
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/text_nome_do_curso"
         android:layout_width="350dp"
-        android:layout_height="43dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="@string/text_hint_nome_do_curso"
         android:inputType="textPersonName"
         android:textColor="#000000"
         android:textColorHint="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/text_btn_finalizar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_telefone"
-        app:layout_constraintVertical_bias="0.201" />
+        android:autofillHints=""
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/text_telefone"
-        android:layout_width="348dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="@string/text_hint_telefone"
         android:inputType="textPersonName"
         android:textColorHint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_sobrenome"
-        app:layout_constraintVertical_bias="0.0" />
+        android:importantForAutofill="no"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/text_sobrenome"
-        android:layout_width="347dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="@string/text_hint_sobrenome"
         android:inputType="textPersonName"
         android:textColorHint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_primeiro_nome"
-        app:layout_constraintVertical_bias="0.017" />
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/text_btn_salvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:hint="@string/text_hint_salvar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.099"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/text_btn_finalizar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_nome_do_curso"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintVertical_bias="0.344" />
 
     <Button
         android:id="@+id/text_btn_limpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="232dp"
         android:hint="@string/text_hint_limpar"
         android:shadowColor="#FFFFFF"
         android:textColor="#F3F3F3"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/text_btn_finalizar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.847"
+        app:layout_constraintStart_toEndOf="@+id/text_btn_salvar"
         app:layout_constraintTop_toBottomOf="@+id/text_nome_do_curso"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.344"
         app:strokeColor="#FFFFFF" />
 
     <Button
         android:id="@+id/text_btn_finalizar"
-        android:layout_width="341dp"
-        android:layout_height="46dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:hint="@string/text_hint_finalizar"
+        android:textColorHint="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_titulo"
-        app:layout_constraintVertical_bias="0.813" />
+        app:layout_constraintTop_toBottomOf="@+id/text_nome_do_curso"
+        app:layout_constraintVertical_bias="0.385" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

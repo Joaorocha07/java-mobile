@@ -1,4 +1,4 @@
 package com.example.atividade.controller;
 
-public class CursoController {
+public class PessoaController {
 }
