@@ -79,6 +79,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnbuton_Salvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                outraPessoa.setNome(editNome.getText().toString());
+                outraPessoa.setSobreNome(editSobrenome.getText().toString());
+                outraPessoa.setNomeCurso(editNomeCurso.getText().toString());
+                outraPessoa.setTelefone(editTelefone.getText().toString());
+                Toast.makeText(MainActivity.this,"Salvo",Toast.LENGTH_LONG).show();
+            }
+        });
+
 /*
         dadosPessoa = "Primeiro nome: ";
         dadosPessoa += pessoa.getNome();
@@ -100,18 +111,5 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("ProgramacaoPOO", pessoa.toString());
         Log.i("ProgramacaoPOO", outraPessoa.toString());
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
