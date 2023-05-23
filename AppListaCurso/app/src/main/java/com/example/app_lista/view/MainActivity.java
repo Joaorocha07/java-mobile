@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.app_lista.R;
 import com.example.app_lista.model.Pessoa;
@@ -69,6 +70,15 @@ public class MainActivity extends AppCompatActivity {
                 editTelefone.setText("");
             }
         });
+
+        btnbuton_Finalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"Voltar",Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
+
 /*
         dadosPessoa = "Primeiro nome: ";
         dadosPessoa += pessoa.getNome();
