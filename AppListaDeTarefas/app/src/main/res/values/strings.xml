@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">AppListaDeTarefas</string>
+    <string name="txt_hint_edit_btn_limpar">Limpar</string>
+    <string name="txt_hint_edit_btn_salvar">Salvar</string>
+    <string name="txt_hint_edit_btn_finalizar">Finalizar</string>
     <string name="txt_hint_edit_nome_da_tarefa">Nome da Tarefa</string>
-    <string name="txt_hint_edit_data_de_conclusao">Data de Conlusão da Tarefa</string>
     <string name="txt_hint_edit_descricao">Descrição</string>
-    <string name="txt_hint_edit_limpar">Limpar</string>
-    <string name="txt_hint_edit_salvar">Salvar</string>
-    <string name="txt_hint_edit_finalizar">Finalizar</string>
+    <string name="txt_hint_edit_data_de_conclusao">Data de Conclusão</string>
+    <string name="app_lista_de_tarefas">App Lista De Tarefas</string>
 </resources>

@@ -2,17 +2,17 @@ package com.example.applistadetarefas.model;
 
 public class Tarefa {
     private String nomeDaTarefa;
-    private String dataDeConclusao;
     private String descricao;
+    private String dataDeConclusao;
 
     public Tarefa() {
 
     }
 
-    public Tarefa(String nomeDaTarefa, String dataDeConclusao, String descricao) {
+    public Tarefa(String nomeDaTarefa, String descricao, String dataDeConclusao) {
         this.nomeDaTarefa = nomeDaTarefa;
-        this.dataDeConclusao = dataDeConclusao;
         this.descricao = descricao;
+        this.dataDeConclusao = dataDeConclusao;
     }
 
     public String getNomeDaTarefa() {
@@ -23,14 +23,6 @@ public class Tarefa {
         this.nomeDaTarefa = nomeDaTarefa;
     }
 
-    public String getDataDeConclusao() {
-        return dataDeConclusao;
-    }
-
-    public void setDataDeConclusao(String dataDeConclusaoDaTarefa) {
-        this.dataDeConclusao = dataDeConclusaoDaTarefa;
-    }
-
     public String getDescricao() {
         return descricao;
     }
@@ -39,12 +31,20 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
+    public String getDataDeConclusao() {
+        return dataDeConclusao;
+    }
+
+    public void setDataDeConclusao(String dataDeConclusao) {
+        this.dataDeConclusao = dataDeConclusao;
+    }
+
     @Override
     public String toString() {
         return "Tarefa{" +
                 "nomeDaTarefa='" + nomeDaTarefa + '\'' +
-                ", dataDeConclusaoDaTarefa='" + dataDeConclusao + '\'' +
                 ", descricao='" + descricao + '\'' +
+                ", dataDeConclusao='" + dataDeConclusao + '\'' +
                 '}';
     }
 }
