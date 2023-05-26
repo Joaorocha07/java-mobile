@@ -4,143 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainActivity">
+    tools:context=".MainActivity">
 
-    <ScrollView
-        android:layout_width="408dp"
-        android:layout_height="731dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_lista_de_compras"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="192dp"
-                android:textAlignment="center"
-                app:srcCompat="@drawable/tarefas"
-                android:contentDescription="@string/todo" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/digite_o_nome_do_produto_a_quantidade_desejada_e_o_local_onde_pretende_compra_lo"
-                android:textAlignment="center"
-                android:textColor="#3C3B3B"
-                android:textColorHint="#353333"
-                android:textSize="16sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="33dp" />
-
-            <EditText
-                android:id="@+id/editTextNomeDoProduto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/txt_hint_edit_nome_do_produto"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColorHint="#000000"
-                android:autofillHints="" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="25dp" />
-
-            <EditText
-                android:id="@+id/editTextQuantidadeDeProdutos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/txt_hint_edit_quantidade_de_produtos"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColorHint="#000000"
-                android:autofillHints="" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="21dp" />
-
-            <EditText
-                android:id="@+id/editTextLocalParaComprar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/txt_hint_edit_local_para_comprar"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColorHint="#000000"
-                android:autofillHints="" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="18dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="85dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn_limpar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/txt_hint_edit_limpar"
-                    android:textColorHint="#FFFFFF"
-                    android:textStyle="bold" />
-
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:id="@+id/btn_salvar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/txt_hint_edit_salvar"
-                    android:textColorHint="#FFFFFF"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/btn_finalizar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/txt_hint_edit_finalizar"
-                android:textColorHint="#FFFFFF" />
-
-        </LinearLayout>
-    </ScrollView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

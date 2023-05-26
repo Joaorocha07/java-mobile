@@ -1,12 +1,3 @@
 <resources>
     <string name="app_name">AppListaDeCompras</string>
-    <string name="txt_hint_edit_nome_do_produto">Nome do Produo</string>
-    <string name="txt_hint_edit_quantidade_de_produtos">Quantidade de Produtos</string>
-    <string name="txt_hint_edit_local_para_comprar">Local Para Comprar</string>
-    <string name="txt_hint_edit_limpar">Limpar</string>
-    <string name="txt_hint_edit_salvar">Salvar</string>
-    <string name="txt_hint_edit_finalizar">Finalizar</string>
-    <string name="app_lista_de_compras">App Lista de Compras</string>
-    <string name="digite_o_nome_do_produto_a_quantidade_desejada_e_o_local_onde_pretende_compra_lo">Digite o nome do produto, a quantidade desejada e o local onde pretende compra-lo</string>
-    <string name="todo">TODO</string>
 </resources>
