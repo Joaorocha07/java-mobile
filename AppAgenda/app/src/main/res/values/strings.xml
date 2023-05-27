@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AppAgenda</string>
+    <string name="txt_hint_edit_titulo">Titulo</string>
+    <string name="txt_hint_edit_horario">Horario</string>
+    <string name="txt_hint_edit_local">Local</string>
+    <string name="txt_hint_edit_btn_limpar">Limpar</string>
+    <string name="txt_hint_edit_btn_salvar">Salvar</string>
+    <string name="txt_hint_edit_btn_finalizar">Finalizar</string>
 </resources>
