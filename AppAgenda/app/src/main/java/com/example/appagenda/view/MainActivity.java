@@ -1,6 +1,7 @@
 package com.example.appagenda.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Button editBtnFinalizar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 novaAgenda.setTitulo(editTitulo.getText().toString());
                 novaAgenda.getHorario(editHorario.getText().toString());
                 novaAgenda.getLocal(editLocal.getText().toString());
-                Toast.makeText(MainActivity.this,"Salvo com Sucesso!",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Salvo com Sucesso!", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -53,14 +54,14 @@ public class MainActivity extends AppCompatActivity {
                 editTitulo.setText("");
                 editHorario.setText("");
                 editLocal.setText("");
-                Toast.makeText(MainActivity.this,"Limpo com Sucesso!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Limpo com Sucesso!", Toast.LENGTH_LONG).show();
             }
         });
 
         editBtnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Finalizado com Sucesso!",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Finalizado com Sucesso!", Toast.LENGTH_LONG).show();
                 finish();
             }
         });
