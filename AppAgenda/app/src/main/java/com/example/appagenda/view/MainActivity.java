@@ -9,10 +9,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.appagenda.R;
+import com.example.appagenda.controller.AgendaController;
 import com.example.appagenda.model.Agenda;
 
 public class MainActivity extends AppCompatActivity {
 
+    AgendaController agendaController;
     Agenda novaAgenda;
 
     EditText editTitulo;
@@ -38,12 +40,16 @@ public class MainActivity extends AppCompatActivity {
         editBtnLimpar = findViewById(R.id.btnLimpar);
         editBtnFinalizar = findViewById(R.id.btnFinalizar);
 
+        agendaController = new AgendaController();
+        agendaController.toString();
+
         editBtnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 novaAgenda.setTitulo(editTitulo.getText().toString());
                 novaAgenda.getHorario(editHorario.getText().toString());
                 novaAgenda.getLocal(editLocal.getText().toString());
+                agendaController.salvar(novaAgenda);
                 Toast.makeText(MainActivity.this, "Salvo com Sucesso!", Toast.LENGTH_LONG).show();
             }
         });
