@@ -8,11 +8,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.applistadecompras.R;
+import com.example.applistadecompras.controller.ComprasController;
 import com.example.applistadecompras.model.Compras;
 
 public class MainActivity extends AppCompatActivity {
 
     Compras novaCompra;
+    ComprasController ComprasController;
 
     EditText editNomeDoProdutos;
     EditText editQuantidadeDeProdutos;
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         novaCompra = new Compras();
+        ComprasController = new ComprasController();
+        ComprasController.toString();
 
         editNomeDoProdutos = findViewById(R.id.editTextNomeDoProduto);
         editQuantidadeDeProdutos = findViewById(R.id.editTextQuantidadeDeProdutos);
@@ -53,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 novaCompra.setNomeDoProduto(editNomeDoProdutos.getText().toString());
                 novaCompra.setQuantidadeDeProdutos(editQuantidadeDeProdutos.getText().toString());
                 novaCompra.setLocalParaComprar(editLocalParaComprar.getText().toString());
+                ComprasController.salvar(novaCompra);
                 Toast.makeText(MainActivity.this,"Limpo com sucesso!", Toast.LENGTH_LONG).show();
             }
         });

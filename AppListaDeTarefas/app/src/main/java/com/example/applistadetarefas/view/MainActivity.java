@@ -9,10 +9,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.applistadetarefas.R;
+import com.example.applistadetarefas.controller.TarefaController;
 import com.example.applistadetarefas.model.Tarefa;
 
 public class MainActivity extends AppCompatActivity {
 
+    TarefaController tarefaController;
     Tarefa novaTarefa;
 
     EditText editNomeDaTarefa;
@@ -38,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         editBtnSalvar = findViewById(R.id.btn_salvar);
         editBtnFinalizar = findViewById(R.id.btn_finalizar);
 
+        tarefaController = new TarefaController();
+        tarefaController.toString();
+
         editBtnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 novaTarefa.setDescricao(editDescricao.getText().toString());
                 novaTarefa.setDataDeConclusao(editDataDeConclusao.getText().toString());
                 Toast.makeText(MainActivity.this,"Salvo com sucesso",Toast.LENGTH_LONG).show();
+                tarefaController.salvar(novaTarefa);
             }
         });
 
