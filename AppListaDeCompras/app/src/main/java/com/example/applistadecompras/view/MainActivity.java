@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
 
+    SharedPreferences.Editor listaVip;
+
     public static final String NOME_PREFERENCES = "pref_listavip";
 
     Compras novaCompra;
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        SharedPreferences.Editor listaVip = preferences.edit();
+        listaVip = preferences.edit();
 
         novaCompra = new Compras();
 
@@ -67,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 editNomeDoProdutos.setText("");
                 editQuantidadeDeProdutos.setText("");
                 editLocalParaComprar.setText("");
+
+                listaVip.clear();
+                listaVip.apply();
+
                 Toast.makeText(MainActivity.this,"Limpo com sucesso!", Toast.LENGTH_LONG).show();
             }
         });
