@@ -23,7 +23,7 @@ public class Agenda {
         this.titulo = titulo;
     }
 
-    public String getHorario(String s) {
+    public String getHorario() {
         return horario;
     }
 
@@ -31,7 +31,7 @@ public class Agenda {
         this.horario = horario;
     }
 
-    public String getLocal(String s) {
+    public String getLocal() {
         return local;
     }
 

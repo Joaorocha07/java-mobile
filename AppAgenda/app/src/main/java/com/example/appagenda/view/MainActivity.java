@@ -2,6 +2,7 @@ package com.example.appagenda.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,12 @@ import com.example.appagenda.controller.AgendaController;
 import com.example.appagenda.model.Agenda;
 
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences preferences;
+
+    SharedPreferences.Editor listaVip;
+
+    public static final String NOME_PREFERENCES = "pref_listavip";
 
     AgendaController agendaController;
     Agenda novaAgenda;
@@ -30,7 +37,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
+
         novaAgenda = new Agenda();
+
+        novaAgenda.setTitulo(preferences.getString("Titulo", ""));
+        novaAgenda.setHorario(preferences.getString("Horario", ""));
+        novaAgenda.setLocal(preferences.getString("Local", ""));
 
         editTitulo = findViewById(R.id.editTextTitulo);
         editHorario = findViewById(R.id.editTextHorario);
@@ -47,10 +60,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 novaAgenda.setTitulo(editTitulo.getText().toString());
-                novaAgenda.getHorario(editHorario.getText().toString());
-                novaAgenda.getLocal(editLocal.getText().toString());
+                novaAgenda.setHorario(editHorario.getText().toString());
+                novaAgenda.setLocal(editLocal.getText().toString());
                 agendaController.salvar(novaAgenda);
-                Toast.makeText(MainActivity.this, "Salvo com Sucesso!", Toast.LENGTH_LONG).show();
+
+                Toast.makeText(MainActivity.this, "Dados salvos" + novaAgenda.toString(), Toast.LENGTH_LONG).show();
+                agendaController.salvar(novaAgenda);
+
+                listaVip.putString("Titulo", novaAgenda.getTitulo());
+                listaVip.putString("Horario", novaAgenda.getHorario());
+                listaVip.putString("Local", novaAgenda.getLocal());
+                listaVip.apply();
+
+                agendaController.salvar(novaAgenda);
+
             }
         });
 
