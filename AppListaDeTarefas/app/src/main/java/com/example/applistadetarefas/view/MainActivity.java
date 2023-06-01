@@ -1,5 +1,6 @@
 package com.example.applistadetarefas.view;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,12 @@ import com.example.applistadetarefas.controller.TarefaController;
 import com.example.applistadetarefas.model.Tarefa;
 
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences preferences;
+
+    SharedPreferences.Editor listaVip;
+
+    public static final String NOME_PREFERENCES = "pref_listavip";
 
     TarefaController tarefaController;
     Tarefa novaTarefa;
@@ -30,7 +37,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
+        listaVip = preferences.edit();
+
         novaTarefa = new Tarefa();
+
+        novaTarefa.setNomeDaTarefa(preferences.getString("Nome da Tarefa", ""));
+        novaTarefa.setDescricao(preferences.getString("Descrição", ""));
+        novaTarefa.setDataDeConclusao(preferences.getString("Data de Conclusão", ""));
 
         editNomeDaTarefa = findViewById(R.id.edit_nome_da_tarefa);
         editDescricao = findViewById(R.id.edit_descricao);
@@ -59,7 +73,15 @@ public class MainActivity extends AppCompatActivity {
                 novaTarefa.setNomeDaTarefa(editNomeDaTarefa.getText().toString());
                 novaTarefa.setDescricao(editDescricao.getText().toString());
                 novaTarefa.setDataDeConclusao(editDataDeConclusao.getText().toString());
-                Toast.makeText(MainActivity.this,"Salvo com sucesso",Toast.LENGTH_LONG).show();
+
+                Toast.makeText(MainActivity.this, "Dados salvos" + novaTarefa.toString(), Toast.LENGTH_LONG).show();
+                tarefaController.salvar(novaTarefa);
+
+                listaVip.putString("Nome da Tarefa", novaTarefa.getNomeDaTarefa());
+                listaVip.putString("Descrição", novaTarefa.getDescricao());
+                listaVip.putString("Data de Conclusão", novaTarefa.getDataDeConclusao());
+                listaVip.apply();
+
                 tarefaController.salvar(novaTarefa);
             }
         });
