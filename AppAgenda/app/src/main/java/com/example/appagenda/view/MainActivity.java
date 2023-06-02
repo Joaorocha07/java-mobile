@@ -15,12 +15,6 @@ import com.example.appagenda.model.Agenda;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences preferences;
-
-    SharedPreferences.Editor listaVip;
-
-    public static final String NOME_PREFERENCES = "pref_listavip";
-
     AgendaController agendaController;
     Agenda novaAgenda;
 
@@ -37,14 +31,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        listaVip = preferences.edit();
+        agendaController = new AgendaController(MainActivity.this);
+        agendaController.toString();
 
         novaAgenda = new Agenda();
 
-        novaAgenda.setTitulo(preferences.getString("Titulo", ""));
-        novaAgenda.setHorario(preferences.getString("Horario", ""));
-        novaAgenda.setLocal(preferences.getString("Local", ""));
+        agendaController.buscar(novaAgenda);
 
         editTitulo = findViewById(R.id.editTextTitulo);
         editHorario = findViewById(R.id.editTextHorario);
@@ -53,9 +45,6 @@ public class MainActivity extends AppCompatActivity {
         editBtnSalvar = findViewById(R.id.btnSalvar);
         editBtnLimpar = findViewById(R.id.btnLimpar);
         editBtnFinalizar = findViewById(R.id.btnFinalizar);
-
-        agendaController = new AgendaController();
-        agendaController.toString();
 
         editBtnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,11 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Dados salvos" + novaAgenda.toString(), Toast.LENGTH_LONG).show();
                 agendaController.salvar(novaAgenda);
-
-                listaVip.putString("Titulo", novaAgenda.getTitulo());
-                listaVip.putString("Horario", novaAgenda.getHorario());
-                listaVip.putString("Local", novaAgenda.getLocal());
-                listaVip.apply();
 
                 agendaController.salvar(novaAgenda);
 
