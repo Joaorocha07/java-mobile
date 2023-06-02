@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">AppImc</string>
-    <string name="text_hint_edit_peso">Peso</string>
-    <string name="text_hint_edit_altura">Altura</string>
-    <string name="text_hint_edit_btn_calcular">Calcular</string>
-    <string name="text_hint_edit_limpar">Limpar</string>
-</resources>

@@ -3,10 +3,11 @@ plugins {
 }
 
 android {
+    namespace 'dev.android.santos.applistacurso'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.app_lista"
+        applicationId "dev.android.santos.applistacurso"
         minSdk 26
         targetSdk 32
         versionCode 1
