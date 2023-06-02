@@ -15,12 +15,6 @@ import com.example.applistadetarefas.model.Tarefa;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences preferences;
-
-    SharedPreferences.Editor listaVip;
-
-    public static final String NOME_PREFERENCES = "pref_listavip";
-
     TarefaController tarefaController;
     Tarefa novaTarefa;
 
@@ -37,14 +31,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        listaVip = preferences.edit();
+        tarefaController = new TarefaController(MainActivity.this);
+        tarefaController.toString();
 
         novaTarefa = new Tarefa();
-
-        novaTarefa.setNomeDaTarefa(preferences.getString("Nome da Tarefa", ""));
-        novaTarefa.setDescricao(preferences.getString("Descrição", ""));
-        novaTarefa.setDataDeConclusao(preferences.getString("Data de Conclusão", ""));
+        tarefaController.buscar(novaTarefa);
 
         editNomeDaTarefa = findViewById(R.id.edit_nome_da_tarefa);
         editDescricao = findViewById(R.id.edit_descricao);
@@ -53,9 +44,6 @@ public class MainActivity extends AppCompatActivity {
         editBtnLimpar = findViewById(R.id.btn_limpar);
         editBtnSalvar = findViewById(R.id.btn_salvar);
         editBtnFinalizar = findViewById(R.id.btn_finalizar);
-
-        tarefaController = new TarefaController();
-        tarefaController.toString();
 
         editBtnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,12 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 novaTarefa.setDataDeConclusao(editDataDeConclusao.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Dados salvos" + novaTarefa.toString(), Toast.LENGTH_LONG).show();
-                tarefaController.salvar(novaTarefa);
-
-                listaVip.putString("Nome da Tarefa", novaTarefa.getNomeDaTarefa());
-                listaVip.putString("Descrição", novaTarefa.getDescricao());
-                listaVip.putString("Data de Conclusão", novaTarefa.getDataDeConclusao());
-                listaVip.apply();
 
                 tarefaController.salvar(novaTarefa);
             }
