@@ -2,6 +2,7 @@ package com.example.appagenda.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        agendaController = new AgendaController(MainActivity.this);
+        agendaController.toString();
+
         novaAgenda = new Agenda();
+
+        agendaController.buscar(novaAgenda);
 
         editTitulo = findViewById(R.id.editTextTitulo);
         editHorario = findViewById(R.id.editTextHorario);
@@ -40,17 +46,19 @@ public class MainActivity extends AppCompatActivity {
         editBtnLimpar = findViewById(R.id.btnLimpar);
         editBtnFinalizar = findViewById(R.id.btnFinalizar);
 
-        agendaController = new AgendaController();
-        agendaController.toString();
-
         editBtnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 novaAgenda.setTitulo(editTitulo.getText().toString());
-                novaAgenda.getHorario(editHorario.getText().toString());
-                novaAgenda.getLocal(editLocal.getText().toString());
+                novaAgenda.setHorario(editHorario.getText().toString());
+                novaAgenda.setLocal(editLocal.getText().toString());
                 agendaController.salvar(novaAgenda);
-                Toast.makeText(MainActivity.this, "Salvo com Sucesso!", Toast.LENGTH_LONG).show();
+
+                Toast.makeText(MainActivity.this, "Dados salvos" + novaAgenda.toString(), Toast.LENGTH_LONG).show();
+                agendaController.salvar(novaAgenda);
+
+                agendaController.salvar(novaAgenda);
+
             }
         });
 

@@ -51,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
         novaCompraDaAulaDeHoje.setQuantidadeDeProdutos(preferences.getString("Quantidade de produtos", ""));
         novaCompraDaAulaDeHoje.setLocalParaComprar(preferences.getString("Local para comprar", ""));
 
-        editNomeDoProdutos = findViewById(R.id.editTextNomeDoProduto);
-        editQuantidadeDeProdutos = findViewById(R.id.editTextQuantidadeDeProdutos);
-        editLocalParaComprar = findViewById(R.id.editTextLocalParaComprar);
-
         editNomeDoProdutos.setText(novaCompraDaAulaDeHoje.getNomeDoProduto());
         editQuantidadeDeProdutos.setText(novaCompraDaAulaDeHoje.getQuantidadeDeProdutos());
         editLocalParaComprar.setText(novaCompraDaAulaDeHoje.getLocalParaComprar());
+
+        editNomeDoProdutos = findViewById(R.id.editTextNomeDoProduto);
+        editQuantidadeDeProdutos = findViewById(R.id.editTextQuantidadeDeProdutos);
+        editLocalParaComprar = findViewById(R.id.editTextLocalParaComprar);
 
         editBtnLimpar = findViewById(R.id.btn_limpar);
         editBtnSalvar = findViewById(R.id.btn_salvar);
