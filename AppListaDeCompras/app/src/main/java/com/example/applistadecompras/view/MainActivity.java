@@ -2,7 +2,6 @@ package com.example.applistadecompras.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,94 +14,68 @@ import com.example.applistadecompras.model.Compras;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences preferences;
-
-    SharedPreferences.Editor listaVip;
-
-    public static final String NOME_PREFERENCES = "pref_listavip";
-
-    Compras novaCompra;
-    Compras novaCompraDaAulaDeHoje;
     ComprasController ComprasController;
+    Compras novaCompra;
 
-    EditText editNomeDoProdutos;
+    EditText editNomeDoProduto;
     EditText editQuantidadeDeProdutos;
-    EditText editLocalParaComprar;
+    EditText editlocalParaComprar;
 
-    Button editBtnLimpar;
     Button editBtnSalvar;
+    Button editBtnLimpar;
     Button editBtnFinalizar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
-        listaVip = preferences.edit();
+        ComprasController = new ComprasController(MainActivity.this);
+        ComprasController.toString();
 
         novaCompra = new Compras();
 
-        ComprasController = new ComprasController();
-        ComprasController.toString();
+        ComprasController.buscar(novaCompra);
 
-        novaCompraDaAulaDeHoje = new Compras();
-        novaCompraDaAulaDeHoje.setNomeDoProduto(preferences.getString("Nome do produto", ""));
-        novaCompraDaAulaDeHoje.setQuantidadeDeProdutos(preferences.getString("Quantidade de produtos", ""));
-        novaCompraDaAulaDeHoje.setLocalParaComprar(preferences.getString("Local para comprar", ""));
-
-        editNomeDoProdutos.setText(novaCompraDaAulaDeHoje.getNomeDoProduto());
-        editQuantidadeDeProdutos.setText(novaCompraDaAulaDeHoje.getQuantidadeDeProdutos());
-        editLocalParaComprar.setText(novaCompraDaAulaDeHoje.getLocalParaComprar());
-
-        editNomeDoProdutos = findViewById(R.id.editTextNomeDoProduto);
+        editNomeDoProduto = findViewById(R.id.editTextNomeDoProduto);
+        editlocalParaComprar = findViewById(R.id.editTextLocalParaComprar);
         editQuantidadeDeProdutos = findViewById(R.id.editTextQuantidadeDeProdutos);
-        editLocalParaComprar = findViewById(R.id.editTextLocalParaComprar);
 
-        editBtnLimpar = findViewById(R.id.btn_limpar);
         editBtnSalvar = findViewById(R.id.btn_salvar);
+        editBtnLimpar = findViewById(R.id.btn_limpar);
         editBtnFinalizar = findViewById(R.id.btn_finalizar);
-
-        editBtnLimpar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                editNomeDoProdutos.setText("");
-                editQuantidadeDeProdutos.setText("");
-                editLocalParaComprar.setText("");
-
-                listaVip.clear();
-                listaVip.apply();
-
-                Toast.makeText(MainActivity.this,"Limpo com sucesso!", Toast.LENGTH_LONG).show();
-            }
-        });
 
         editBtnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                novaCompra.setNomeDoProduto(editNomeDoProdutos.getText().toString());
+                novaCompra.setNomeDoProduto(editNomeDoProduto.getText().toString());
+                novaCompra.setLocalParaComprar(editlocalParaComprar.getText().toString());
                 novaCompra.setQuantidadeDeProdutos(editQuantidadeDeProdutos.getText().toString());
-                novaCompra.setLocalParaComprar(editLocalParaComprar.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Dados salvos" + novaCompra.toString(), Toast.LENGTH_LONG).show();
-                ComprasController.salvar(novaCompra);
-
-                listaVip.putString("Nome do produto", novaCompra.getNomeDoProduto());
-                listaVip.putString("Quantidade de produtos", novaCompra.getQuantidadeDeProdutos());
-                listaVip.putString("Local para comprar", novaCompra.getLocalParaComprar());
-                listaVip.apply();
 
                 ComprasController.salvar(novaCompra);
+            }
+        });
+
+        editBtnLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editNomeDoProduto.setText("");
+                editlocalParaComprar.setText("");
+                editQuantidadeDeProdutos.setText("");
+                Toast.makeText(MainActivity.this, "Limpo com Sucesso!", Toast.LENGTH_LONG).show();
             }
         });
 
         editBtnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Voltar",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Finalizado com Sucesso!", Toast.LENGTH_LONG).show();
                 finish();
             }
         });
+
 
     }
 }
