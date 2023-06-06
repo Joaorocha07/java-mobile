@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 editDescricao.setText("");
                 editDataDeConclusao.setText("");
                 Toast.makeText(MainActivity.this,"Limpo com sucesso", Toast.LENGTH_LONG).show();
+                tarefaController.limpar();
             }
         });
 

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">AppImc</string>
+    <string name="calcule_seu_imc">Calcule Seu IMC</string>
+    <string name="edit_text_hint_altura">Insira Sua Altura</string>
+    <string name="edit_text_hint_peso">Insira Seu Peso</string>
+    <string name="edit_text_hint_calcular">Calcular</string>
+    <string name="edit_text_hint_salvar">Salvar</string>
+    <string name="edit_text_hint_limpar">Limpar</string>
+    <string name="edit_text_hint_finalizar">Finalizar</string>
 </resources>

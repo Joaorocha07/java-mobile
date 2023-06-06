@@ -44,7 +44,7 @@ public class AgendaController {
         return novaAgenda;
     }
 
-    public void limpar(Agenda novaAgenda) {
+    public void limpar() {
         listaVip.clear();
         listaVip.apply();
     }
