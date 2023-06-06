@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 editlocalParaComprar.setText("");
                 editQuantidadeDeProdutos.setText("");
                 Toast.makeText(MainActivity.this, "Limpo com Sucesso!", Toast.LENGTH_LONG).show();
+                ComprasController.limpar();
             }
         });
 

@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 editHorario.setText("");
                 editLocal.setText("");
                 Toast.makeText(MainActivity.this, "Limpo com Sucesso!", Toast.LENGTH_LONG).show();
+                agendaController.limpar();
             }
         });
 

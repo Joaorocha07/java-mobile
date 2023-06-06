@@ -42,7 +42,7 @@ public class ComprasController {
         return novaCompra;
     }
 
-    public void limpar(Compras novaCompra) {
+    public void limpar() {
         listaVip.clear();
         listaVip.apply();
     }
