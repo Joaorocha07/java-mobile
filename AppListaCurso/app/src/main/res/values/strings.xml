@@ -4,4 +4,5 @@
     <string name="app_name_CursoInteresse">Curso Interessado</string>
     <string name="app_name_SegundoNome">Sobrenome</string>
     <string name="app_name_PrimeiroNome">Nome</string>
+    <string name="app_name_SelecioneSeuCurso">Selecione Seu Curso</string>
 </resources>
