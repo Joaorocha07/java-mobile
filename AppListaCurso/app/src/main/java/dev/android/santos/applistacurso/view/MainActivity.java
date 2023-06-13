@@ -3,22 +3,32 @@ package dev.android.santos.applistacurso.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import dev.android.santos.applistacurso.R;
+import dev.android.santos.applistacurso.controller.CursoController;
 import dev.android.santos.applistacurso.controller.PessoaController;
+import dev.android.santos.applistacurso.model.Curso;
 import dev.android.santos.applistacurso.model.Pessoa;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     PessoaController controller;
+    CursoController CursoController;
 
     Pessoa outraPessoa;
+    List<Curso> listaCursos;
 
     EditText edit_PrimeiroNome;
     EditText edit_SegundoNome;
@@ -33,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        CursoController cursoController = new CursoController();
+
+        listaCursos = cursoController.getListaCursos();
 
         controller = new PessoaController(MainActivity.this);
         controller.toString();
