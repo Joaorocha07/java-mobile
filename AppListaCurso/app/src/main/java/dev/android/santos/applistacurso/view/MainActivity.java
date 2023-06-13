@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     CursoController CursoController;
 
     Pessoa outraPessoa;
+    List<Curso> listaCursos;
 
     EditText edit_PrimeiroNome;
     EditText edit_SegundoNome;
@@ -43,16 +44,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CursoController  = new CursoController(MainActivity.this);
+        CursoController cursoController = new CursoController();
 
-        List<String> listaDeCursos = new ArrayList<>(Arrays.asList("Profissionalizante", "Técnico", "Graduação", "QAB", "Doutorado"));
-
-        Spinner spinnerCursos = findViewById(R.id.txtListaSpinner);
-
-        ArrayAdapter<String> cursosAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,listaDeCursos);
-
-        spinnerCursos.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,listaDeCursos));
-        spinnerCursos.setAdapter(cursosAdapter);
+        listaCursos = cursoController.getListaCursos();
 
         controller = new PessoaController(MainActivity.this);
         controller.toString();

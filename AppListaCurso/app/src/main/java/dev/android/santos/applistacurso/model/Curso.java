@@ -3,6 +3,10 @@ package dev.android.santos.applistacurso.model;
 public class Curso {
     private String cursoDesejado;
 
+    public Curso() {
+
+    }
+
     public Curso(String cursoDesejado) {
         this.cursoDesejado = cursoDesejado;
     }
