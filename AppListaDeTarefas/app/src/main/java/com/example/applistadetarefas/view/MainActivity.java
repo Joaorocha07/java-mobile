@@ -1,6 +1,5 @@
 package com.example.applistadetarefas.view;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,13 +9,18 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.applistadetarefas.R;
+import com.example.applistadetarefas.controller.PessoaController;
 import com.example.applistadetarefas.controller.TarefaController;
+import com.example.applistadetarefas.model.Pessoa;
 import com.example.applistadetarefas.model.Tarefa;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     TarefaController tarefaController;
     Tarefa novaTarefa;
+    List<Pessoa> listaTarefa;
 
     EditText editNomeDaTarefa;
     EditText editDescricao;
@@ -30,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        PessoaController pessoaController = new PessoaController();
+
+        listaTarefa = pessoaController.getListaCursos();
 
         tarefaController = new TarefaController(MainActivity.this);
         tarefaController.toString();

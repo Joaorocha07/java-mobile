@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         listaCursos = cursoController.getListaCursos();
 
         controller = new PessoaController(MainActivity.this);
+
         controller.toString();
 
         outraPessoa = new Pessoa();
