@@ -36,7 +36,8 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="216dp"
-                app:srcCompat="@drawable/tarefas" />
+                app:srcCompat="@drawable/tarefas"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -86,16 +87,34 @@
                 android:id="@+id/editTextLocalParaComprar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/txt_hint_edit_local_para_comprar"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:textColorHint="#000000"
-                android:autofillHints="" />
+                android:textColorHint="#000000" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="18dp" />
+                android:layout_height="14dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lista_de_compras"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="21dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"

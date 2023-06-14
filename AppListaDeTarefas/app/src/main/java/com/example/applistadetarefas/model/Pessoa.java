@@ -1,21 +1,21 @@
 package com.example.applistadetarefas.model;
 
 public class Pessoa {
-    private String cursoDesejado;
+    private String listaDesejado;
 
     public Pessoa() {
 
     }
 
-    public Pessoa(String cursoDesejado) {
-        this.cursoDesejado = cursoDesejado;
+    public Pessoa(String listaDesejado) {
+        this.listaDesejado = listaDesejado;
     }
 
-    public String getCursoDesejado() {
-        return cursoDesejado;
+    public String getListaDesejado() {
+        return listaDesejado;
     }
 
-    public void setCursoDesejado(String cursoDesejado) {
-        this.cursoDesejado = cursoDesejado;
+    public void setListaDesejado(String listaDesejado) {
+        this.listaDesejado = listaDesejado;
     }
 }
