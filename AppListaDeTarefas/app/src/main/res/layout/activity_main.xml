@@ -112,8 +112,9 @@
         android:id="@+id/spinner"
         android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_data_de_conclusao"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -126,10 +127,10 @@
         android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561"
+        app:layout_constraintVertical_bias="0.506"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

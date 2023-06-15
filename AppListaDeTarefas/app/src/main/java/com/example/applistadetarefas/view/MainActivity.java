@@ -2,8 +2,10 @@ package com.example.applistadetarefas.view;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     TarefaController tarefaController;
     Tarefa novaTarefa;
-    List<Pessoa> listaTarefa;
+    List<String> listaTarefa;
 
     EditText editNomeDaTarefa;
     EditText editDescricao;
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     Button editBtnSalvar;
     Button editBtnFinalizar;
 
+    Spinner edit_Spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         PessoaController pessoaController = new PessoaController();
 
-        listaTarefa = pessoaController.getListaCursos();
+        listaTarefa = pessoaController.dadosSpinner();
 
         tarefaController = new TarefaController(MainActivity.this);
         tarefaController.toString();
@@ -52,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
         editBtnLimpar = findViewById(R.id.btn_limpar);
         editBtnSalvar = findViewById(R.id.btn_salvar);
         editBtnFinalizar = findViewById(R.id.btn_finalizar);
+
+        edit_Spinner = findViewById(R.id.spinner);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, pessoaController.dadosSpinner());
+
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+
+        edit_Spinner.setAdapter(adapter);
 
         editBtnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override

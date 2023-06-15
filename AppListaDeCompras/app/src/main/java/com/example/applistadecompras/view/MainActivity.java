@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.applistadecompras.R;
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     ComprasController ComprasController;
     Compras novaCompra;
-    List<Pessoa> listaCompras;
+    List<String> listaCompras;
 
     EditText editNomeDoProduto;
     EditText editQuantidadeDeProdutos;
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     Button editBtnLimpar;
     Button editBtnFinalizar;
 
+    Spinner edit_Spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         PessoaController pessoaController = new PessoaController();
 
-        listaCompras = pessoaController.getListaCompras();
+        listaCompras = pessoaController.dadosSpinner();
 
         ComprasController = new ComprasController(MainActivity.this);
         ComprasController.toString();
@@ -53,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
         editBtnSalvar = findViewById(R.id.btn_salvar);
         editBtnLimpar = findViewById(R.id.btn_limpar);
         editBtnFinalizar = findViewById(R.id.btn_finalizar);
+
+        edit_Spinner = findViewById(R.id.spinner);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, pessoaController.dadosSpinner());
+
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+
+        edit_Spinner.setAdapter(adapter);
 
         editBtnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
