@@ -10,12 +10,17 @@ import android.widget.Toast;
 
 import com.example.applistadecompras.R;
 import com.example.applistadecompras.controller.ComprasController;
+import com.example.applistadecompras.controller.PessoaController;
 import com.example.applistadecompras.model.Compras;
+import com.example.applistadecompras.model.Pessoa;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     ComprasController ComprasController;
     Compras novaCompra;
+    List<Pessoa> listaCompras;
 
     EditText editNomeDoProduto;
     EditText editQuantidadeDeProdutos;
@@ -29,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        PessoaController pessoaController = new PessoaController();
+
+        listaCompras = pessoaController.getListaCompras();
 
         ComprasController = new ComprasController(MainActivity.this);
         ComprasController.toString();
