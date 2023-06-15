@@ -5,18 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.appagenda.R;
 import com.example.appagenda.controller.AgendaController;
+import com.example.appagenda.controller.PessoaController;
 import com.example.appagenda.model.Agenda;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     AgendaController agendaController;
     Agenda novaAgenda;
+
+    List<String> nomesDaAgenda;
 
     EditText editTitulo;
     EditText editHorario;
@@ -26,10 +33,16 @@ public class MainActivity extends AppCompatActivity {
     Button editBtnLimpar;
     Button editBtnFinalizar;
 
+    Spinner edit_Spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        PessoaController pessoaController = new PessoaController();
+
+        nomesDaAgenda = pessoaController.dadosSpinner();
 
         agendaController = new AgendaController(MainActivity.this);
         agendaController.toString();
@@ -45,6 +58,15 @@ public class MainActivity extends AppCompatActivity {
         editBtnSalvar = findViewById(R.id.btnSalvar);
         editBtnLimpar = findViewById(R.id.btnLimpar);
         editBtnFinalizar = findViewById(R.id.btnFinalizar);
+
+        edit_Spinner = findViewById(R.id.spinner);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, pessoaController.dadosSpinner());
+
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+
+        edit_Spinner.setAdapter(adapter);
+
 
         editBtnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override

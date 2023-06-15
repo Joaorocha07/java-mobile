@@ -19,14 +19,23 @@ public class PessoaController {
 
     private List lista() {
         listaCompras = new ArrayList<Pessoa>();
-        listaCompras.add(new Pessoa("Informatica"));
-        listaCompras.add(new Pessoa("Informatica"));
-        listaCompras.add(new Pessoa("Informatica"));
-        listaCompras.add(new Pessoa("Informatica"));
-        listaCompras.add(new Pessoa("Informatica"));
-        listaCompras.add(new Pessoa("Informatica"));
-        listaCompras.add(new Pessoa("Informatica"));
-        listaCompras.add(new Pessoa("Informatica"));
+        listaCompras.add(new Pessoa("Salgadinho"));
+        listaCompras.add(new Pessoa("Finni"));
+        listaCompras.add(new Pessoa("Pizza"));
+        listaCompras.add(new Pessoa("Pão De Alho"));
+        listaCompras.add(new Pessoa("Pão De Queijo"));
+        listaCompras.add(new Pessoa("Batata Palha"));
+        listaCompras.add(new Pessoa("Refrigerante"));
+        listaCompras.add(new Pessoa("Chocolate"));
         return listaCompras;
+    }
+
+    public ArrayList<String> dadosSpinner() {
+        ArrayList<String> dados = new ArrayList<>();
+        for (int i = 0; i < getListaCompras().size(); i++) {
+            Pessoa objeto = (Pessoa) getListaCompras().get(i);
+            dados.add(objeto.getCompradesejado());
+        }
+        return dados;
     }
 }
