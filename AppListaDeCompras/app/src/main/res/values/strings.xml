@@ -8,4 +8,5 @@
     <string name="txt_hint_edit_limpar">Limpar</string>
     <string name="txt_hint_edit_salvar">Salvar</string>
     <string name="txt_hint_edit_finalizar">Finalizar</string>
+    <string name="lista_de_compras">Lista De Compras</string>
 </resources>

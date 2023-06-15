@@ -15,6 +15,9 @@ public class Tarefa {
         this.dataDeConclusao = dataDeConclusao;
     }
 
+    public Tarefa(String nova_tarefa) {
+    }
+
     public String getNomeDaTarefa() {
         return nomeDaTarefa;
     }
