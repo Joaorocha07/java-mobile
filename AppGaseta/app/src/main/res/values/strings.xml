@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AppGaseta</string>
+    <string name="hint_text_button_finalizar">Finalizar</string>
+    <string name="hint_text_button_limpar">Limpar</string>
+    <string name="hint_text_button_calcular">Calcular</string>
+    <string name="hint_text_text_valor_da_gasolina">Valor da Gasolina</string>
+    <string name="hint_text_text_valor_do_etanol">Valor do Etanol</string>
+    <string name="gasolina_x_etanol">Gasolina X Etanol</string>
+    <string name="resultado">Resultado</string>
+    <string name="todo">TODO</string>
 </resources>
