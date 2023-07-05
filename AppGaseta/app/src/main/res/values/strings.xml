@@ -8,4 +8,6 @@
     <string name="gasolina_x_etanol">Gasolina X Etanol</string>
     <string name="resultado">Resultado</string>
     <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
+    <string name="hint_text_button_salvar">Salvar</string>
 </resources>
