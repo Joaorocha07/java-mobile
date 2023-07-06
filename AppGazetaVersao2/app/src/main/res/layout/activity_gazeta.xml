@@ -165,11 +165,11 @@
 
                 <Button
                     android:id="@+id/btn_salvar"
+                    android:enabled="false"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:backgroundTint="#B13B3B"
                     android:hint="@string/hint_text_button_salvar"
                     android:textColorHint="#FFFFFF"
                     android:textSize="20sp"

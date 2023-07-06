@@ -2,7 +2,7 @@
     <string name="app_name">AppGazetaVersao2</string>
     <string name="gasolina_x_etanol">Gasolina x Etanol</string>
     <string name="todo">todo</string>
-    <string name="hint_text_text_valor_da_gasolina">Valo da Gasolina</string>
+    <string name="hint_text_text_valor_da_gasolina">Valor da Gasolina</string>
     <string name="hint_text_text_valor_do_etanol">Valor do Etanol</string>
     <string name="resultado">Resultado</string>
     <string name="hint_text_button_calcular">Calcular</string>
