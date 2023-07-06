@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">AppGazetaVersao2</string>
+    <string name="gasolina_x_etanol">Gasolina x Etanol</string>
+    <string name="todo">todo</string>
+    <string name="hint_text_text_valor_da_gasolina">Valor da Gasolina</string>
+    <string name="hint_text_text_valor_do_etanol">Valor do Etanol</string>
+    <string name="resultado">Resultado</string>
+    <string name="hint_text_button_calcular">Calcular</string>
+    <string name="hint_text_button_limpar">Limpar</string>
+    <string name="hint_text_button_finalizar">Finalizar</string>
+    <string name="hint_text_button_salvar">Salvar</string>
+    <string name="txt_titulo">Titulo</string>
+    <string name="txt_hint_edit_gasolina">Gasolina</string>
+    <string name="txt_hint_edit_etanol">Etanol</string>
+    <string name="txt_hint_edit_nome_do_curso">Nome do Curso</string>
+    <string name="txt_hint_edit_telefone_de_contato">Telefone de Contato</string>
+    <string name="txt_resultado">Resultado</string>
+    <string name="txt_button_limpar">Limpar</string>
+    <string name="txt_button_salvar">Salvar</string>
+    <string name="txt_button_finalizar">Finalizar</string>
+</resources>
