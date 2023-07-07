@@ -10,7 +10,7 @@ import com.example.appgazetaversao2.R;
 import com.example.appgazetaversao2.database.GazetaDB;
 
 public class SplashActivity extends AppCompatActivity {
-    public static final int TIME_OUT_SPLASH = 3000;
+    public static final int TIME_OUT_SPLASH = 5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,5 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
             }
         }, TIME_OUT_SPLASH);
-
     }
 }
