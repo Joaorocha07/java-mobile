@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AppEscolar</string>
+    <string name="txt_hint_edit_nome_do_aluno">Nome do Aluno</string>
+    <string name="aplicativo_m_dia_escolar">APLICATIVO MÉDIA ESCOLAR</string>
+    <string name="matematica">Matematica</string>
+    <string name="nota_das_disciplinas">NOTA DAS DISCIPLINAS</string>
+    <string name="media">Media</string>
 </resources>
