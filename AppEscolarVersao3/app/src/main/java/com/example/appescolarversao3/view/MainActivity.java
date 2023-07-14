@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private DisciplinaController disciplinaController;
 
     private EditText edit_nomeDoAluno;
-    boolean mediaCalculadaMatematica;
 
     Disciplina dismatematica;
 
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText edit_SegundaNotaMatematica;
     private EditText edit_TerceiraNotaMatematica;
     private EditText edit_QuartaNotaMatematica;
+    boolean mediaCalculadaMatematica;
     Button btn_Calcular_Media_Matematica;
     ImageButton btn_Limpar_Notas_Matematica;
 
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText edit_SegundaNotaPortugues;
     private EditText edit_TerceiraNotaPortugues;
     private EditText edit_QuartaNotaPortugues;
+    boolean mediaCalculadaPortugues;
     Button btn_Calcular_Media_Portugues;
     ImageButton btn_Limpar_Notas_Portugues;
 
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText edit_SegundaNotaGeografia;
     private EditText edit_TerceiraNotaGeografia;
     private EditText edit_QuartaNotaGeografia;
+    boolean mediaCalculadaGeografia;
     Button btn_Calcular_Media_Geografia;
     ImageButton btn_Limpar_Notas_Geografia;
 
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText edit_SegundaNotaHistoria;
     private EditText edit_TerceiraNotaHistoria;
     private EditText edit_QuartaNotaHistoria;
+    boolean mediaCalculadaHistoria;
     Button btn_Calcular_Media_Historia;
     ImageButton btn_Limpar_Notas_Historia;
 
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText edit_SegundaNotaFisica;
     private EditText edit_TerceiraNotaFisica;
     private EditText edit_QuartaNotaFisica;
+    boolean mediaCalculadaFisica;
     Button btn_Calcular_Media_Fisica;
     ImageButton btn_Limpar_Notas_Fisica;
 
@@ -232,7 +236,7 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         // Definir o estado de cálculo da média como verdadeiro
-                        mediaCalculadaMatematica = true;
+                        mediaCalculadaPortugues = true;
                     } else {
                         Toast.makeText(MainActivity.this, "Por favor, insira um valor válido", Toast.LENGTH_SHORT).show();
                     }
@@ -304,7 +308,7 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         // Definir o estado de cálculo da média como verdadeiro
-                        mediaCalculadaMatematica = true;
+                        mediaCalculadaGeografia = true;
                     } else {
                         Toast.makeText(MainActivity.this, "Por favor, insira um valor válido", Toast.LENGTH_SHORT).show();
                     }
@@ -376,7 +380,7 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         // Definir o estado de cálculo da média como verdadeiro
-                        mediaCalculadaMatematica = true;
+                        mediaCalculadaHistoria = true;
                     } else {
                         Toast.makeText(MainActivity.this, "Por favor, insira um valor válido", Toast.LENGTH_SHORT).show();
                     }
@@ -448,7 +452,7 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         // Definir o estado de cálculo da média como verdadeiro
-                        mediaCalculadaMatematica = true;
+                        mediaCalculadaFisica = true;
                     } else {
                         Toast.makeText(MainActivity.this, "Por favor, insira um valor válido", Toast.LENGTH_SHORT).show();
                     }
@@ -476,12 +480,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void salvarNotas() {
-        if (!mediaCalculadaMatematica) {
-            Toast.makeText(MainActivity.this, "Calcule a média antes de salvar as notas", Toast.LENGTH_SHORT).show();
+        String nomeDoAluno = edit_nomeDoAluno.getText().toString();
+
+        if (nomeDoAluno.isEmpty()) {
+            Toast.makeText(MainActivity.this, "Preencha o nome do aluno", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        String nomeDoAluno = edit_nomeDoAluno.getText().toString();
+        if (!mediaCalculadaMatematica) {
+            Toast.makeText(MainActivity.this, "Calcule a média de matematica antes de salvar as notas", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // Matematica ##################################################################
         String primeiraNotaMatematica = edit_primeiraNotaMatematica.getText().toString();
@@ -490,7 +499,7 @@ public class MainActivity extends AppCompatActivity {
         String quartaNotaMatematica = edit_QuartaNotaMatematica.getText().toString();
 
         // Verifique se todos os campos estão preenchidos
-        if (nomeDoAluno.isEmpty() || primeiraNotaMatematica.isEmpty() || segundaNotaMatematica.isEmpty()
+        if (primeiraNotaMatematica.isEmpty() || segundaNotaMatematica.isEmpty()
                 || terceiraNotaMatematica.isEmpty() || quartaNotaMatematica.isEmpty()) {
             Toast.makeText(MainActivity.this, "Preencha todos os campos de Matematica", Toast.LENGTH_SHORT).show();
             return;
@@ -520,13 +529,18 @@ public class MainActivity extends AppCompatActivity {
         disciplinaController.salvar(matematica);
 
         // Portugues ##################################################################
+        if (!mediaCalculadaPortugues) {
+            Toast.makeText(MainActivity.this, "Calcule a média de português antes de salvar as notas", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String primeiraNotaPortugues = edit_primeiraNotaPortugues.getText().toString();
         String segundaNotaPortugues = edit_SegundaNotaPortugues.getText().toString();
         String terceiraNotaPortugues = edit_TerceiraNotaPortugues.getText().toString();
         String quartaNotaPortugues = edit_QuartaNotaPortugues.getText().toString();
 
         // Verifique se todos os campos estão preenchidos
-        if (nomeDoAluno.isEmpty() || primeiraNotaPortugues.isEmpty() || segundaNotaPortugues.isEmpty()
+        if (primeiraNotaPortugues.isEmpty() || segundaNotaPortugues.isEmpty()
                 || terceiraNotaPortugues.isEmpty() || quartaNotaPortugues.isEmpty()) {
             Toast.makeText(MainActivity.this, "Preencha todos os campos de Portugues", Toast.LENGTH_SHORT).show();
             return;
@@ -550,18 +564,23 @@ public class MainActivity extends AppCompatActivity {
 
         String mediaFormatadaPortugues = decimalFormat.format(mediaPortugues);
 
-        matematica.setResultadoMedia(mediaFormatadaPortugues);
+        portugues.setResultadoMedia(mediaFormatadaPortugues);
 
         disciplinaController.salvar(portugues);
 
         // Geografia ##################################################################
+        if (!mediaCalculadaGeografia) {
+            Toast.makeText(MainActivity.this, "Calcule a média de geografia antes de salvar as notas", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String primeiraNotaGeografia = edit_primeiraNotaGeografia.getText().toString();
         String segundaNotaGeografia = edit_SegundaNotaGeografia.getText().toString();
         String terceiraNotaGeografia = edit_TerceiraNotaGeografia.getText().toString();
         String quartaNotaGeografia = edit_QuartaNotaGeografia.getText().toString();
 
         // Verifique se todos os campos estão preenchidos
-        if (nomeDoAluno.isEmpty() || primeiraNotaGeografia.isEmpty() || segundaNotaGeografia.isEmpty()
+        if (primeiraNotaGeografia.isEmpty() || segundaNotaGeografia.isEmpty()
                 || terceiraNotaGeografia.isEmpty() || quartaNotaGeografia.isEmpty()) {
             Toast.makeText(MainActivity.this, "Preencha todos os campos de Geografia", Toast.LENGTH_SHORT).show();
             return;
@@ -590,13 +609,18 @@ public class MainActivity extends AppCompatActivity {
         disciplinaController.salvar(geografia);
 
         // Hitoria ##################################################################
+        if (!mediaCalculadaHistoria) {
+            Toast.makeText(MainActivity.this, "Calcule a média de historia antes de salvar as notas", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String primeiraNotaHitoria = edit_primeiraNotaHistoria.getText().toString();
         String segundaNotaHitoria = edit_SegundaNotaHistoria.getText().toString();
         String terceiraNotaHitoria = edit_TerceiraNotaHistoria.getText().toString();
         String quartaNotaHitoria = edit_QuartaNotaHistoria.getText().toString();
 
         // Verifique se todos os campos estão preenchidos
-        if (nomeDoAluno.isEmpty() || primeiraNotaHitoria.isEmpty() || segundaNotaHitoria.isEmpty()
+        if (primeiraNotaHitoria.isEmpty() || segundaNotaHitoria.isEmpty()
                 || terceiraNotaHitoria.isEmpty() || quartaNotaHitoria.isEmpty()) {
             Toast.makeText(MainActivity.this, "Preencha todos os campos de Hitoria", Toast.LENGTH_SHORT).show();
             return;
@@ -625,13 +649,18 @@ public class MainActivity extends AppCompatActivity {
         disciplinaController.salvar(historia);
 
         // Fisica ##################################################################
+        if (!mediaCalculadaFisica) {
+            Toast.makeText(MainActivity.this, "Calcule a média de física antes de salvar as notas", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String primeiraNotaFisica = edit_primeiraNotaFisica.getText().toString();
         String segundaNotaFisica = edit_SegundaNotaFisica.getText().toString();
         String terceiraNotaFisica = edit_TerceiraNotaFisica.getText().toString();
         String quartaNotaFisica = edit_QuartaNotaFisica.getText().toString();
 
         // Verifique se todos os campos estão preenchidos
-        if (nomeDoAluno.isEmpty() || primeiraNotaFisica.isEmpty() || segundaNotaFisica.isEmpty()
+        if (primeiraNotaFisica.isEmpty() || segundaNotaFisica.isEmpty()
                 || terceiraNotaFisica.isEmpty() || quartaNotaFisica.isEmpty()) {
             Toast.makeText(MainActivity.this, "Preencha todos os campos de Física", Toast.LENGTH_SHORT).show();
             return;
@@ -658,6 +687,9 @@ public class MainActivity extends AppCompatActivity {
         fisica.setResultadoMedia(mediaFormatadaFisica);
 
         disciplinaController.salvar(fisica);
+
+        TextView textViewSalvamentoGeral = findViewById(R.id.textViewResultadoSalvamentoGeral);
+        textViewSalvamentoGeral.setText("As médias gerais do aluno " + nomeDoAluno);
 
         Toast.makeText(MainActivity.this, "Notas salvas com sucesso", Toast.LENGTH_SHORT).show();
     }

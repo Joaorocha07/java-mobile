@@ -93,7 +93,7 @@
                     android:ems="10"
                     tools:ignore="SpeakableTextPresentCheck"
                     android:autofillHints=""
-                    android:inputType="numberDecimal"/>
+                    android:inputType="number"/>
 
                 <EditText
                     android:id="@+id/editTextMatematicaBimestre2"
@@ -108,8 +108,7 @@
                     android:gravity="center"
                     tools:ignore="SpeakableTextPresentCheck"
                     android:autofillHints=""
-                    android:inputType="numberDecimal"/>
-
+                    android:inputType="number"/>
                 <EditText
                     android:id="@+id/editTextMatematicaBimestre3"
                     android:layout_width="50dp"
@@ -123,7 +122,7 @@
                     android:gravity="center"
                     tools:ignore="SpeakableTextPresentCheck"
                     android:autofillHints=""
-                    android:inputType="numberDecimal"/>
+                    android:inputType="number"/>
 
                 <EditText
                     android:id="@+id/editTextMatematicaBimestre4"
@@ -135,7 +134,7 @@
                     android:gravity="center"
                     tools:ignore="SpeakableTextPresentCheck"
                     android:autofillHints=""
-                    android:inputType="numberDecimal"/>
+                    android:inputType="number"/>
 
                 <TextView
                     android:id="@+id/resultadoMediaMatematica"
@@ -239,7 +238,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -254,7 +253,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -269,7 +268,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -284,7 +283,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
@@ -386,7 +385,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -401,7 +400,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -416,7 +415,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -431,7 +430,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
@@ -533,7 +532,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -548,7 +547,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -563,7 +562,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -578,7 +577,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
@@ -680,7 +679,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -695,7 +694,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -710,7 +709,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -725,7 +724,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="numberDecimal"
+                        android:inputType="number"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
@@ -809,6 +808,15 @@
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="16dp" />
+
+                    <TextView
+                        android:id="@+id/textViewResultadoSalvamentoGeral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="TextView"
+                        android:textColor="#000000" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
