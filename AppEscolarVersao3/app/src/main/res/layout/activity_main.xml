@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -239,7 +239,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -254,7 +254,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -269,7 +269,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -284,7 +284,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
@@ -386,7 +386,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -401,7 +401,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -416,7 +416,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -431,7 +431,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
@@ -533,7 +533,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -548,7 +548,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -563,7 +563,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -578,7 +578,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
@@ -680,7 +680,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -695,7 +695,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -710,7 +710,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <EditText
@@ -725,7 +725,7 @@
                         android:elevation="8dp"
                         android:ems="10"
                         android:gravity="center"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
