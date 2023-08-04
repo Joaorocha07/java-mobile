@@ -4,15 +4,195 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="21dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="137dp"
+                    android:layout_height="104dp"
+                    app:srcCompat="@drawable/compras" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Monte o seu carrinho de compras, podendo colocar o nome do produto  e a quantidade."
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp" />
+
+                <EditText
+                    android:id="@+id/editTextNomeDoItem"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:elevation="4dp"
+                    android:layout_gravity="center"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:background="#FFFFFF"
+                    android:hint="@string/txt_hint_edit_nome_do_item" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="31dp" />
+
+                <EditText
+                    android:id="@+id/editTextQuantidadeDeItens"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:background="#FFFFFF"
+                    android:elevation="4dp"
+                    android:layout_gravity="center"
+                    android:ems="10"
+                    android:hint="@string/txt_hint_edit_quantidade_de_itens"
+                    android:inputType="number" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp" />
+
+                <Button
+                    android:id="@+id/buttonAdicionar"
+                    android:layout_width="136dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#3DF8D6"
+                    android:hint="@string/txt_hint_edit_adicionar"
+                    android:textColorHint="#000000"
+                    android:textStyle="bold"
+                    android:viewportWidth="136" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:id="@+id/linear_itenslistas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="6"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:paddingLeft="12dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/TextViewNome"
+                                        android:layout_width="217dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="10dp"
+                                        android:text="Nome"
+                                        android:textSize="14dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/textViewQntd"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Qtnd"
+                                        android:text="Qntd"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/textViewTotal"
+                                        android:layout_width="95dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="30dp"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_weight="1"
+                                        android:hint="Total"
+                                        android:text="Total"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="38dp"
+                            android:gravity="bottom"
+                            android:orientation="vertical">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#AAAAAA" />
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/RecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:listitem="@layout/activity_items"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="20dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
