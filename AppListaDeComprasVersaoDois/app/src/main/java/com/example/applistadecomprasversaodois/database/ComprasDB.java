@@ -35,4 +35,13 @@ public class ComprasDB extends SQLiteOpenHelper {
     public void salvarDados(String tabela, ContentValues dados){
         db.insert(tabela,null, dados);
     }
+
+    public void excluirDados(long id) {
+        SQLiteDatabase db = getWritableDatabase();
+        String whereClause = "_id=?";
+        String[] whereArgs = {String.valueOf(id)};
+        db.delete("Compras", whereClause, whereArgs);
+        db.close();
+    }
+
 }

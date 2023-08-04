@@ -2,6 +2,7 @@ package com.example.applistadecomprasversaodois.controller;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.applistadecomprasversaodois.database.ComprasDB;
@@ -27,4 +28,14 @@ public class ComprasController {
         db.insert("Compras", null, dados);
         db.close();
     }
+
+    public void excluir(int id) {
+        SQLiteDatabase db = comprasDB.getWritableDatabase();
+        String whereClause = "_id=?";
+        String[] whereArgs = {String.valueOf(id)};
+        db.delete("Compras", whereClause, whereArgs);
+        db.close();
+    }
+
+
 }

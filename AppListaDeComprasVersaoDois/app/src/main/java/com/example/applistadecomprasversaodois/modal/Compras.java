@@ -3,14 +3,16 @@ package com.example.applistadecomprasversaodois.modal;
 public class Compras {
     private String nome;
     private String quantidade;
+    private int id;
 
     public Compras() {
 
     }
 
-    public Compras(String nome, String quantidade) {
+    public Compras(String nome, String quantidade, int id) {
         this.nome = nome;
         this.quantidade = quantidade;
+        this.id = id;
     }
 
     public String getNome() {
@@ -27,5 +29,13 @@ public class Compras {
 
     public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

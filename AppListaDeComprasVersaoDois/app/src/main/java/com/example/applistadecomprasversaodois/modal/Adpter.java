@@ -35,7 +35,6 @@ public class Adpter extends RecyclerView.Adapter<Adpter.RecyclerTesteViewHolder>
 
         viewHolder.viewNome.setText(item.getNome());
         viewHolder.viewQntd.setText(item.getQuantidade());
-
     }
 
     @Override
