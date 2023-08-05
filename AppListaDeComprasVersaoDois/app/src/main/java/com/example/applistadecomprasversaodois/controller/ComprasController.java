@@ -29,13 +29,11 @@ public class ComprasController {
         db.close();
     }
 
-    public void excluir(int id) {
-        SQLiteDatabase db = comprasDB.getWritableDatabase();
-        String whereClause = "_id=?";
-        String[] whereArgs = {String.valueOf(id)};
-        db.delete("Compras", whereClause, whereArgs);
-        db.close();
+    public ArrayList<Compras> getItems() {
+        return comprasDB.getAllItems();
     }
 
-
+    public void deleteItem(int itemId) {
+        comprasDB.deleteItem(itemId);
+    }
 }

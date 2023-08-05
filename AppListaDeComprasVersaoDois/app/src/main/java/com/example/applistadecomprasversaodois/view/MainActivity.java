@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements Interface.ClickRe
         setaRecyclerView();
         setaButtons();
         listenersButtons();
-
     }
 
     public void setaRecyclerView(){
@@ -108,6 +107,12 @@ public class MainActivity extends AppCompatActivity implements Interface.ClickRe
                 adpter.notifyDataSetChanged();
             }
         });
+    }
+
+    private void deleteItemFromDatabase(int position) {
+        ComprasController item = itemListas.get(position);
+        shoppingListController.deleteItem(item.getId());
+        loadItemsFromDatabase();
     }
 
 }
