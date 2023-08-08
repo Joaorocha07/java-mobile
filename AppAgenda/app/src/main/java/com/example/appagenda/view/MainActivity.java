@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         novaAgenda = new Agenda();
 
-        agendaController.buscar(novaAgenda);
+        //          agendaController.buscar(novaAgenda);
 
         editTitulo = findViewById(R.id.editTextTitulo);
         editHorario = findViewById(R.id.editTextHorario);
@@ -77,10 +77,6 @@ public class MainActivity extends AppCompatActivity {
                 agendaController.salvar(novaAgenda);
 
                 Toast.makeText(MainActivity.this, "Dados salvos" + novaAgenda.toString(), Toast.LENGTH_LONG).show();
-                agendaController.salvar(novaAgenda);
-
-                agendaController.salvar(novaAgenda);
-
             }
         });
 

@@ -1,10 +1,14 @@
 package com.example.applistadetarefas.controller;
 
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.applistadetarefas.database.TarefasDB;
 import com.example.applistadetarefas.model.Tarefa;
 import com.example.applistadetarefas.view.MainActivity;
 
@@ -14,9 +18,12 @@ public class TarefaController {
     SharedPreferences.Editor listaVip;
     public static final String NOME_PREFERENCES = "pref_listavip";
 
-    public TarefaController(MainActivity mainActivity) {
-        preferences = mainActivity.getSharedPreferences(NOME_PREFERENCES, 0);
-        listaVip = preferences.edit();
+    private TarefasDB tarefasDB;
+
+    public TarefaController(Context context) {
+        tarefasDB = new TarefasDB(context);
+        // preferences = mainActivity.getSharedPreferences(NOME_PREFERENCES, 0);
+        // listaVip = preferences.edit();
     }
 
     @NonNull
@@ -32,6 +39,15 @@ public class TarefaController {
         listaVip.putString("Descrição", novaTarefa.getDescricao());
         listaVip.putString("Data de Conclusão", novaTarefa.getDataDeConclusao());
         listaVip.apply();
+
+        SQLiteDatabase db = tarefasDB.getWritableDatabase();
+        ContentValues dados = new ContentValues();
+        dados.put("Tarefa", novaTarefa.getNomeDaTarefa());
+        dados.put("Descricao", novaTarefa.getDescricao());
+        dados.put("Conclusao", novaTarefa.getDataDeConclusao());
+
+        db.insert("Tarefas", null, dados);
+        db.close();
     }
 
     public Tarefa buscar(Tarefa novaTarefa) {
