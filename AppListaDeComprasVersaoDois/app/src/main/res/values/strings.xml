@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">AppListaDeComprasVersaoDois</string>
-    <string name="txt_hint_edit_quantidade_de_itens">Quantidade de itens</string>
-    <string name="txt_hint_edit_nome_do_item">Nome do item</string>
-    <string name="txt_hint_edit_adicionar">Adicionar</string>
-    <string name="txt_hint_edit_excluir">Excluir</string>
-</resources>
