@@ -6,17 +6,181 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-78dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:backgroundTint="#009688">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/text_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_agenda"
+                android:textAlignment="center"
+                android:textColor="#3A3838"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:autoSizeTextType="uniform" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/organize_a_sua_agenda_colocando_os_detalhes_do_seu_compromisso_como_t_tulo_data_horario_e_o_local"
+                android:textAlignment="center"
+                android:textColor="#4E4C4C"
+                android:textSize="16sp" />
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="306dp" />
+
+            <EditText
+                android:id="@+id/editTextTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/txt_hint_edit_titulo"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColorHint="#000000"
+                android:autofillHints="" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="21dp" />
+
+            <EditText
+                android:id="@+id/editTextHorario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/txt_hint_edit_horario"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColorHint="#000000"
+                android:autofillHints="" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <EditText
+                android:id="@+id/editTextLocal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/txt_hint_edit_local"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColorHint="#000000"
+                android:autofillHints="" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/selecione_suas_agendas"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="13dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btnSalvar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#009688"
+                    android:hint="@string/txt_hint_edit_btn_salvar"
+                    android:textColorHint="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btnLimpar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#009688"
+                    android:hint="@string/txt_hint_edit_btn_limpar"
+                    android:textColorHint="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btnFinalizar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#009688"
+                android:hint="@string/txt_hint_edit_btn_finalizar"
+                android:textColorHint="#FFFFFF"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

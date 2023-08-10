@@ -10,4 +10,13 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="app_agenda">App Agenda</string>
+    <string name="organize_a_sua_agenda_colocando_os_detalhes_do_seu_compromisso_como_t_tulo_data_horario_e_o_local">Organize a sua agenda colocando os detalhes do seu computador como titulo data horario e o local</string>
+    <string name="txt_hint_edit_titulo">Titulo</string>
+    <string name="txt_hint_edit_horario">Horario</string>
+    <string name="txt_hint_edit_local">Local</string>
+    <string name="selecione_suas_agendas">Selecione suas agendas</string>
+    <string name="txt_hint_edit_btn_salvar">Salvar</string>
+    <string name="txt_hint_edit_btn_limpar">Limpar</string>
+    <string name="txt_hint_edit_btn_finalizar">Finalizar</string>
 </resources>
