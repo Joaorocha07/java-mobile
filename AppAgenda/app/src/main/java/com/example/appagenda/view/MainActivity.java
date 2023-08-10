@@ -15,6 +15,7 @@ import com.example.appagenda.R;
 import com.example.appagenda.controller.AgendaController;
 import com.example.appagenda.controller.PessoaController;
 import com.example.appagenda.model.Agenda;
+import com.example.appagenda.model.Pessoa;
 
 import java.util.List;
 
@@ -49,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         novaAgenda = new Agenda();
 
-        //          agendaController.buscar(novaAgenda);
-
         editTitulo = findViewById(R.id.editTextTitulo);
         editHorario = findViewById(R.id.editTextHorario);
         editLocal = findViewById(R.id.editTextLocal);
@@ -71,10 +70,16 @@ public class MainActivity extends AppCompatActivity {
         editBtnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                novaAgenda.setTitulo(editTitulo.getText().toString());
-                novaAgenda.setHorario(editHorario.getText().toString());
-                novaAgenda.setLocal(editLocal.getText().toString());
-                agendaController.salvar(novaAgenda);
+                String titulo = editTitulo.getText().toString();
+                String horario = editHorario.getText().toString();
+                String local = editLocal.getText().toString();
+
+                Agenda agenda = new Agenda();
+                agenda.setTitulo(titulo);
+                agenda.setHorario(horario);
+                agenda.setLocal(local);
+
+                agendaController.salvar(agenda);
 
                 Toast.makeText(MainActivity.this, "Dados salvos" + novaAgenda.toString(), Toast.LENGTH_LONG).show();
             }
@@ -87,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                 editHorario.setText("");
                 editLocal.setText("");
                 Toast.makeText(MainActivity.this, "Limpo com Sucesso!", Toast.LENGTH_LONG).show();
-                agendaController.limpar();
             }
         });
 

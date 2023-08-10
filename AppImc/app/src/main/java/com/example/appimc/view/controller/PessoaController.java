@@ -1,46 +1,32 @@
 package com.example.appimc.view.controller;
 
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.appimc.view.database.PessoaDB;
 import com.example.appimc.view.model.PessoaModel;
 import com.example.appimc.view.view.MainActivity;
 
 public class PessoaController {
-    SharedPreferences preferences;
-    SharedPreferences.Editor listaVip;
-    public static final String NOME_PREFERENCES = "pref_listavip";
+    private PessoaDB pessoaDB;
 
-    public PessoaController(MainActivity mainActivity) {
-        preferences = mainActivity.getSharedPreferences(NOME_PREFERENCES, 0);
-        listaVip = preferences.edit();
+    public PessoaController(Context context) {
+        pessoaDB = new PessoaDB(context);
     }
 
-    @NonNull
-    @Override
-    public String toString() {
-        Log.d("MVC_Controller", "Controller iniciado");
-        return super.toString();
-    }
+    public void salvar(PessoaModel pessoa) {
+        SQLiteDatabase db = pessoaDB.getWritableDatabase();
 
-    public void salvar(PessoaModel novaPessoa) {
-        Log.d("MVC_Controller", "Salvo" + novaPessoa.toString());
-        listaVip.putString("Sua Altura", novaPessoa.getAltura());
-        listaVip.putString("Seu Peso", novaPessoa.getPeso());
-        listaVip.apply();
-    }
+        ContentValues dados = new ContentValues();
+        dados.put("Altura", pessoa.getAltura());
+        dados.put("Peso", pessoa.getPeso());
 
-    public PessoaModel buscar(PessoaModel novaPessoa) {
-        novaPessoa.setAltura(preferences.getString("Sua Altura", ""));
-        novaPessoa.setPeso(preferences.getString("Seu Peso", ""));
-        return novaPessoa;
+        db.insert("Pessoa", null, dados);
+        db.close();
     }
-
-    public void limpar() {
-        listaVip.clear();
-        listaVip.apply();
-    }
-
 }

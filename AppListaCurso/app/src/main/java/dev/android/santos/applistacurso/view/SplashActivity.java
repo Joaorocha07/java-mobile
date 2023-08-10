@@ -1,4 +1,4 @@
-package com.example.applistadetarefas.view;
+package dev.android.santos.applistacurso.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,8 +6,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.applistadetarefas.R;
-import com.example.applistadetarefas.database.TarefasDB;
+import dev.android.santos.applistacurso.R;
+import dev.android.santos.applistacurso.database.CursoDB;
 
 public class SplashActivity extends AppCompatActivity {
     public static final int TIME_OUT_SPLASH = 5000;
@@ -24,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                TarefasDB db = new TarefasDB(SplashActivity.this);
+                CursoDB db = new CursoDB(SplashActivity.this);
                 Intent telaPrincipal = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(telaPrincipal);
                 finish();

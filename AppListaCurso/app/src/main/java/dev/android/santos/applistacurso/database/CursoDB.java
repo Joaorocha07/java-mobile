@@ -1,4 +1,4 @@
-package com.example.applistadetarefas.database;
+package dev.android.santos.applistacurso.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,14 +6,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class TarefasDB extends SQLiteOpenHelper {
-    private static final String NOME_BANCO = "tarefas.db";
+public class CursoDB extends SQLiteOpenHelper {
+    private static final String NOME_BANCO = "curso.db";
     private static final int VERSAO_BANCO = 1;
 
     Cursor cursor;
     SQLiteDatabase db;
 
-    public TarefasDB(Context context) {
+    public CursoDB(Context context) {
 
         super(context, NOME_BANCO, null, VERSAO_BANCO);
 
@@ -22,11 +22,12 @@ public class TarefasDB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE Tarefas (" +
+        String sql = "CREATE TABLE Curso (" +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "Tarefa TEXT," +
-                "Descricao TEXT," +
-                "Conclusao TEXT)";
+                "Nome TEXT," +
+                "Sobrenome TEXT," +
+                "CursoInteressado TEXT," +
+                "TelefoneDeContato TEXT)";
         db.execSQL(sql);
     }
 

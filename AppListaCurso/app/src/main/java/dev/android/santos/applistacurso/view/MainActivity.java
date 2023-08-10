@@ -16,7 +16,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         controller.toString();
 
         outraPessoa = new Pessoa();
-        controller.procurar(outraPessoa);
+        // controller.procurar(outraPessoa);
 
         edit_PrimeiroNome = findViewById(R.id.edit_PrimeiroNome);
         edit_SegundoNome = findViewById(R.id.edit_SegundoNome);
@@ -84,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
                 edit_SegundoNome.setText("");
                 edit_CursoDesejado.setText("");
                 edit_TelefoneContato.setText("");
-                controller.limpar();
             }
         });
 
@@ -99,14 +97,20 @@ public class MainActivity extends AppCompatActivity {
         btn_Salvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                outraPessoa.setPrimeiroNome(edit_PrimeiroNome.getText().toString());
-                outraPessoa.setSegundoNome(edit_SegundoNome.getText().toString());
-                outraPessoa.setCursoDesejado(edit_CursoDesejado.getText().toString());
-                outraPessoa.setTelefoneContato(edit_TelefoneContato.getText().toString());
+                String primeiroNome = edit_PrimeiroNome.getText().toString();
+                String segundoNome = edit_SegundoNome.getText().toString();
+                String cursoDesejado = edit_CursoDesejado.getText().toString();
+                String telefoneContato = edit_TelefoneContato.getText().toString();
+
+                Pessoa curso = new Pessoa();
+                curso.setPrimeiroNome(primeiroNome);
+                curso.setSegundoNome(segundoNome);
+                curso.setCursoDesejado(cursoDesejado);
+                curso.setTelefoneContato(telefoneContato);
+
+                controller.salvar(curso);
 
                 Toast.makeText(MainActivity.this, "Dados salvos com sucesso" + outraPessoa.toString(), Toast.LENGTH_LONG).show();
-
-                controller.salvar(outraPessoa);
             }
         });
 

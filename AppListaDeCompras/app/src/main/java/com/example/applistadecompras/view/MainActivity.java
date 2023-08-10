@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         novaCompra = new Compras();
 
-        ComprasController.buscar(novaCompra);
-
         editNomeDoProduto = findViewById(R.id.editTextNomeDoProduto);
         editlocalParaComprar = findViewById(R.id.editTextLocalParaComprar);
         editQuantidadeDeProdutos = findViewById(R.id.editTextQuantidadeDeProdutos);
@@ -69,13 +67,17 @@ public class MainActivity extends AppCompatActivity {
         editBtnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                novaCompra.setNomeDoProduto(editNomeDoProduto.getText().toString());
-                novaCompra.setLocalParaComprar(editlocalParaComprar.getText().toString());
-                novaCompra.setQuantidadeDeProdutos(editQuantidadeDeProdutos.getText().toString());
+                String nomeDoProduto = editNomeDoProduto.getText().toString();
+                String quantidadeDeProdutos = editQuantidadeDeProdutos.getText().toString();
+                String localParaComprar = editlocalParaComprar.getText().toString();
 
+                Compras compras = new Compras();
+                compras.setNomeDoProduto(nomeDoProduto);
+                compras.setQuantidadeDeProdutos(quantidadeDeProdutos);
+                compras.setLocalParaComprar(localParaComprar);
+
+                ComprasController.salvar(compras);
                 Toast.makeText(MainActivity.this, "Dados salvos" + novaCompra.toString(), Toast.LENGTH_LONG).show();
-
-                ComprasController.salvar(novaCompra);
             }
         });
 
@@ -86,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 editlocalParaComprar.setText("");
                 editQuantidadeDeProdutos.setText("");
                 Toast.makeText(MainActivity.this, "Limpo com Sucesso!", Toast.LENGTH_LONG).show();
-                ComprasController.limpar();
             }
         });
 

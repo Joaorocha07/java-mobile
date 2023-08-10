@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         tarefaController.toString();
 
         novaTarefa = new Tarefa();
-        tarefaController.buscar(novaTarefa);
 
         editNomeDaTarefa = findViewById(R.id.edit_nome_da_tarefa);
         editDescricao = findViewById(R.id.edit_descricao);
@@ -72,20 +71,23 @@ public class MainActivity extends AppCompatActivity {
                 editDescricao.setText("");
                 editDataDeConclusao.setText("");
                 Toast.makeText(MainActivity.this,"Limpo com sucesso", Toast.LENGTH_LONG).show();
-                tarefaController.limpar();
             }
         });
 
         editBtnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                novaTarefa.setNomeDaTarefa(editNomeDaTarefa.getText().toString());
-                novaTarefa.setDescricao(editDescricao.getText().toString());
-                novaTarefa.setDataDeConclusao(editDataDeConclusao.getText().toString());
+                String nomeDaTarefa = editNomeDaTarefa.getText().toString();
+                String descricao = editDescricao.getText().toString();
+                String conclusao = editDataDeConclusao.getText().toString();
+
+                Tarefa tarefa = new Tarefa();
+                tarefa.setNomeDaTarefa(nomeDaTarefa);
+                tarefa.setDescricao(descricao);
+                tarefa.setDataDeConclusao(conclusao);
+                tarefaController.salvar(tarefa);
 
                 Toast.makeText(MainActivity.this, "Dados salvos" + novaTarefa.toString(), Toast.LENGTH_LONG).show();
-
-                tarefaController.salvar(novaTarefa);
             }
         });
 

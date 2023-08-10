@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         PessoaController.toString();
 
         novaPessoa = new PessoaModel();
-        PessoaController.buscar(novaPessoa);
 
         editAltura = findViewById(R.id.editTextAltura);
         editPeso = findViewById(R.id.editTextPeso);
@@ -54,10 +53,14 @@ public class MainActivity extends AppCompatActivity {
         editBtnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                novaPessoa.setPeso(editPeso.getText().toString());
-                novaPessoa.setAltura(editAltura.getText().toString());
+                String altura = editAltura.getText().toString();
+                String peso = editPeso.getText().toString();
+
+                PessoaModel dados = new PessoaModel();
+                dados.setAltura(altura);
+                dados.setPeso(peso);
+                PessoaController.salvar(dados);
                 Toast.makeText(MainActivity.this, "Dados salvos" + novaPessoa.toString(), Toast.LENGTH_LONG).show();
-                PessoaController.salvar(novaPessoa);
             }
         });
 
@@ -67,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
                 editPeso.setText("");
                 editAltura.setText("");
                 Toast.makeText(MainActivity.this,"Limpo com sucesso", Toast.LENGTH_LONG).show();
-                PessoaController.limpar();
             }
         });
 
