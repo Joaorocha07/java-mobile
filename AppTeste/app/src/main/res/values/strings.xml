@@ -19,4 +19,10 @@
     <string name="txt_hint_edit_btn_salvar">Salvar</string>
     <string name="txt_hint_edit_btn_limpar">Limpar</string>
     <string name="txt_hint_edit_btn_finalizar">Finalizar</string>
+    <string name="txt_hint_edit_nome">Nome</string>
+    <string name="txt_hint_edit_sobrenome">Sobrenome</string>
+    <string name="txt_hint_edit_email">Email</string>
+    <string name="txt_hint_edit_senha">Senha</string>
+    <string name="txt_hint_edit_confirme_sua_senha">Confirme sua senha</string>
+    <string name="txt_hint_edit_cadastrar">Cadastrar</string>
 </resources>
